@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t
+        t-name="oe_pos_purchase_order.ControlButtons"
+        t-inherit="point_of_sale.ControlButtons"
+        t-inherit-mode="extension"
+    >
+        <xpath expr="//t[@t-if='props.showRemainingButtons']/div/OrderlineNoteButton" position="after">
+            <button
+                t-att-class="buttonClass"
+                t-on-click="clickPurchaseOrder"
+                t-att-title="'Create Purchase Order'">
+                <i class="fa fa-shopping-cart me-1" role="img" aria-label="Purchase Order" />
+                <t t-esc="purchaseOrderLabel" />
+            </button>
+        </xpath>
+    </t>
+</templates>
